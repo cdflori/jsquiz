@@ -5,6 +5,7 @@ const button3 = document.querySelector("#button3");
 const button4 = document.querySelector("#button4");
 const timeEl = document.querySelector(".timer");
 const submit = document.querySelector("#submit-button");
+const start = document.querySelector("#start-button");
 
 // Setting the timer //
 
@@ -148,6 +149,8 @@ button4.addEventListener("click", function (event) {
 
 });
 
+
+
 function quizStart() {
     timer = setInterval(function(){
         secondsLeft--;
@@ -165,6 +168,7 @@ function quizStart() {
 }
 
 quizStart()
+
 
 
 function quizEnd() {
