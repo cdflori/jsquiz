@@ -7,9 +7,11 @@ const timeEl = document.querySelector(".timer");
 const submit = document.querySelector("#submit-button");
 const start = document.querySelector("#start-button");
 
-// Setting the timer //
+// Setting the time //
 
 let secondsLeft = 60;
+
+// Creating the questions for my quiz//
 
 let questionAnswer = [
     {
@@ -49,8 +51,8 @@ let questionAnswer = [
             "quotes",
             "parenthesis"
         ],
-        correctAnswer: "quotes"    
-    
+        correctAnswer: "quotes"
+
     },
 
     {
@@ -72,6 +74,8 @@ button2.textContent = currentQuestion.answers[1];
 button3.textContent = currentQuestion.answers[2];
 button4.textContent = currentQuestion.answers[3];
 
+//Create a function to advance to next question and to assign questions to buttons//
+
 nextQuestion();
 
 function nextQuestion() {
@@ -83,6 +87,9 @@ function nextQuestion() {
     button4.textContent = currentQuestion.answers[3];
 }
 
+// Create event listeners for answer selection. This includes right and wrong answer prompts //
+
+
 button1.addEventListener("click", function (event) {
     event.preventDefault();
     if (button1.textContent === currentQuestion.correctAnswer) {
@@ -90,12 +97,12 @@ button1.addEventListener("click", function (event) {
     } else {
         alert("Wrong Answer!");
         secondsLeft -= 15;
-    }  
+    }
     index++;
     if (index === questionAnswer.length) {
         quizEnd();
     } else {
-    nextQuestion ();
+        nextQuestion();
     }
 });
 
@@ -107,12 +114,12 @@ button2.addEventListener("click", function (event) {
         alert("Wrong Answer!");
         secondsLeft -= 15;
 
-    }  
+    }
     index++;
     if (index === questionAnswer.length) {
         quizEnd();
     } else {
-    nextQuestion ();
+        nextQuestion();
     }
 });
 
@@ -123,12 +130,12 @@ button3.addEventListener("click", function (event) {
     } else {
         alert("Wrong Answer!");
         secondsLeft -= 15;
-    }  
+    }
     index++;
     if (index === questionAnswer.length) {
         quizEnd();
     } else {
-    nextQuestion ();
+        nextQuestion();
     }
 });
 
@@ -139,20 +146,20 @@ button4.addEventListener("click", function (event) {
     } else {
         alert("Wrong Answer!");
         secondsLeft -= 15;
-    } 
+    }
     index++;
     if (index === questionAnswer.length) {
         quizEnd();
     } else {
-    nextQuestion (); 
+        nextQuestion();
     }
 
 });
 
-
+// Start the time (quiz) //
 
 function quizStart() {
-    timer = setInterval(function(){
+    timer = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = "Your Time: " + secondsLeft;
 
@@ -162,14 +169,12 @@ function quizStart() {
         }
     }, 1000);
 
-    question.removeAttribute("class");
-
     nextQuestion();
 }
 
 quizStart()
 
-
+// End the quiz //
 
 function quizEnd() {
     clearInterval(timer);
@@ -180,6 +185,8 @@ function quizEnd() {
 
     finalScore.textContent = " Your Time: " + secondsLeft;
 }
+
+// Save high scores with initial input in local storage //
 
 function initialsSave() {
     const initials = document.querySelector("#initials");
