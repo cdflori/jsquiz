@@ -10,30 +10,30 @@ I have created a simple timed quiz that covers questions relating to JavaScript.
 
 The user will have 60 seconds on the clock when the quiz begins and be prompted with their first question. 
 
-![timer](assets/quiztime.png)
+![timer](/Assets/quiztime.png)
 
 ## Questions
 
 The user will be asked five questions relating to simple JavaScript concepts. 
 
-![Question 1](assets/question1.png)
+![Question 1](/Assets/question1.png)
 
-![Question 2](assets/question2.png)
+![Question 2](/Assets/question2.png)
 
-![Question 3](assets/question3.png)
+![Question 3](/Assets/question3.png)
 
-![Question 4](assets/question4.png)
+![Question 4](/Assets/question4.png)
 
-![Question 5](assets/question5.png)
+![Question 5](/Assets/question5.png)
 
 ## End of Quiz
 
 Once the user is finished with the quiz, their time will appear along with a place to enter their initials for a highscore. 
 
-![End of Quiz](assets/quizend.png)
+![End of Quiz](/Assets/quizend.png)
 
 ## High Score Storage
 
 The user's highscores will be stored in local storage which the can access in their applications tab in inspect. 
 
-![High Score Storage](assets/highscore.png)
+![High Score Storage](/Assets/highscore.png)
